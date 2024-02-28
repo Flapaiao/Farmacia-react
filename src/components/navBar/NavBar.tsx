@@ -1,3 +1,4 @@
+import { Link, useNavigate } from "react-router-dom"
 
 function Navbar() {
 
@@ -7,12 +8,13 @@ function Navbar() {
         <>
             <div className='w-full bg-indigo-900 text-white flex justify-center py-4'>
                 <div className="container flex justify-between text-lg">
-                    <div className='text-2xl font-bold uppercase'>Farmacia</div>
+                <Link to='/home' className='text-2xl font-bold uppercase hover:text-indigo-300'>Farmacia</Link>
 
                     <div className='flex gap-4'>
-                        <div className='hover:text-indigo-400'>Home</div>
+                        <Link to='/home' className='hover:text-indigo-400'>Home</Link>
                         <div className='hover:text-indigo-400'>Produtos</div>
-                        <div className='hover:text-indigo-400'>Categorias</div>
+                        <Link to='/categorias' className='hover:text-indigo-400'>Categorias</Link>
+                        <Link to='/cadastroCategoria' className='hover:text-indigo-400'>Cadastrar categoria</Link>
                     </div>
                 </div>
             </div>
