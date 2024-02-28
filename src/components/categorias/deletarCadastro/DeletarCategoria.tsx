@@ -11,22 +11,8 @@ function DeletarCadastro() {
     const { id } = useParams<{ id: string }>()
     
     async function buscarPorId(id: string) {
-        try {
             await buscar(`/temas/${id}`, setTema)
-        } catch (error: any) {
-            if (error.toString().includes('403')) {
-                alert('O token expirou, favor logar novamente')
-                handleLogout()
-            }
-        }
     }
-
-    useEffect(() => {
-        if (token === '') {
-            alert('Você precisa estar logado')
-            navigate('/login')
-        }
-    }, [token])
 
     useEffect(() => {
         if (id !== undefined) {
