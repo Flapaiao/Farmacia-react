@@ -1,9 +1,9 @@
-import React, { useContext, useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router'
 import { buscar, deletar } from '../../../services/Service'
 import Categoria from '../../../models/Categoria'
 
-function DeletarCadastro() {
+function DeletarCategoria() {
     const [categoria, setCategoria] = useState<Categoria>({} as Categoria)
 
     let navigate = useNavigate()
@@ -24,7 +24,7 @@ function DeletarCadastro() {
         navigate("/categorias")
     }
 
-    async function DeletarCadastro() {
+    async function DeletarCategoria() {
         try {
             await deletar(`/categorias/${id}`)
 
@@ -47,7 +47,7 @@ function DeletarCadastro() {
                 <p className='p-8 text-3xl bg-slate-200 h-full'>{categoria.tipo}</p>
                 <div className="flex">
                     <button className='text-slate-100 bg-red-400 hover:bg-red-600 w-full py-2' onClick={retornar}>Não</button>
-                    <button className='w-full text-slate-100 bg-indigo-400 hover:bg-indigo-600 flex items-center justify-center' onClick={DeletarCadastro}>
+                    <button className='w-full text-slate-100 bg-indigo-400 hover:bg-indigo-600 flex items-center justify-center' onClick={DeletarCategoria}>
                         Sim
                     </button>
                 </div>
@@ -56,4 +56,4 @@ function DeletarCadastro() {
     )
 }
 
-export default DeletarCadastro;
+export default DeletarCategoria;
